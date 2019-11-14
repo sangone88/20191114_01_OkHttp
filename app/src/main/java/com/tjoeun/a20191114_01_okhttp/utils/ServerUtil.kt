@@ -15,7 +15,7 @@ class ServerUtil {
     companion object {
 
 //        어느 서버에 접속할지 서버 주소를 저장하는 변수.
-        var BASE_URL = "http://192.168.0.26"
+        var BASE_URL = "http://192.168.0.26:5000"
         
         fun postRequestLogin(context: Context, loginId:String, loginPw:String, handler:JasonResponseHandler?) {
 
