@@ -45,9 +45,12 @@ class ServerUtil {
 
                 override fun onResponse(call: Call, response: Response) {
 //                    성공
+                    //                    Log.d("서버응답내용", body)
                     var body = response.body!!.string()
+//                    var json: JSONObject = JSONObject(body)  자료형 적을 필요도 없음
+                    var json = JSONObject(body)
+                    handler?.onResponse(json)
 
-                    Log.d("서버응답내용", body)
                 }
 
             })
