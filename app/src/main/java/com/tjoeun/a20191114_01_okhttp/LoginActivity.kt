@@ -2,6 +2,7 @@ package com.tjoeun.a20191114_01_okhttp
 
 import android.os.Bundle
 import com.tjoeun.a20191114_01_okhttp.utils.ServerUtil
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity() {
 
@@ -15,6 +16,11 @@ class LoginActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+        loginBtn.setOnClickListener {
+            var inputId = userIdEdt.text.toString()
+            var inputPw = userPwEdt.text.toString()
+            ServerUtil.postRequestLogin(mContext, inputId, inputPw, null)
+        }
 
     }
 
