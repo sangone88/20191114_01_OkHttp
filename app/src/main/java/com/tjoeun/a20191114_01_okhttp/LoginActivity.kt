@@ -1,5 +1,6 @@
 package com.tjoeun.a20191114_01_okhttp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -15,10 +16,16 @@ class LoginActivity : BaseActivity() {
         setupEvents()
         setValues()
 
-        ServerUtil.postRequestLogin(mContext, "cho881020", "qlalfqjsgh!", "null")
+//        ServerUtil.postRequestLogin(mContext, "cho881020", "qlalfqjsgh!", "null")
     }
 
     override fun setupEvents() {
+
+        signUpBtn.setOnClickListener {
+            var intent = Intent(mContext, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
         loginBtn.setOnClickListener {
             var inputId = userIdEdt.text.toString()
             var inputPw = userPwEdt.text.toString()
